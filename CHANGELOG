@@ -1,7 +1,5 @@
-v1.2.2
-	- Update NPM scripts
-v1.2.1
 v1.2.0
+	- Update NPM scripts
 	- Update NPM scripts
 v1.1.0
 	- Add bin section to package.json for NPM
