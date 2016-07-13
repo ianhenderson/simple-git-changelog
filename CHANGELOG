@@ -1,7 +1,5 @@
-
-> simple-git-changelog@1.2.1 changelog /Users/henderson_i/Documents/code/mine/simple-git-changelog
-> ./changelog.awk
-
+v1.2.2
+	- Update NPM scripts
 v1.2.1
 v1.2.0
 	- Update NPM scripts
