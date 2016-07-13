@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "A simple AWK script to generate changelogs from your Git history.",
   "main": "index.js",
+  "bin": {
+    "changelog": "./changelog.awk"
+  },
   "scripts": {
+    "changelog": "./changelog.awk",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
