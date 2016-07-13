@@ -1,8 +1,9 @@
 
-> simple-git-changelog@1.2.0 changelog /Users/henderson_i/Documents/code/mine/simple-git-changelog
+> simple-git-changelog@1.2.1 changelog /Users/henderson_i/Documents/code/mine/simple-git-changelog
 > ./changelog.awk
 
-Unreleased
+v1.2.1
+v1.2.0
 	- Update NPM scripts
 v1.1.0
 	- Add bin section to package.json for NPM
