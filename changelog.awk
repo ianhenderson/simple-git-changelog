@@ -3,7 +3,7 @@ BEGIN {
 	# Determines whether to print 'Unreleased' banner at top
 	UNRELEASED_COMMITS = 1
 	# Prefixes that determine whether a commit will be printed
-	CHANGELOG_REGEX = "^(changelog|fix|docs|chore|feat): "
+	CHANGELOG_REGEX = "^(changelog|fix|docs|chore|feat|feature|refactor|update): "
 	FS="|"
 	while ("git log --pretty='%D|%s|%H'" | getline) {
 		IS_GIT_TAG = length($1) && match($1, /tag:/)
