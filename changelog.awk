@@ -1,29 +1,44 @@
 #!/usr/bin/awk -f
 BEGIN {
-	# Determines whether to print 'Unreleased' banner at top
-	UNRELEASED_COMMITS = 1
+	REPO_URL = getRepoURL()
 	# Prefixes that determine whether a commit will be printed
 	CHANGELOG_REGEX = "^(changelog|fix|docs|chore|feat|feature|refactor|update): "
 	FS="|"
-	while ("git log --pretty='%D|%s|%H'" | getline) {
+	# %D: tags
+	# %s: commit message
+	# %H: long hash
+	# %h: short hash
+	while ("git log --pretty='%D|%s|%H|%h'" | getline) {
 		IS_GIT_TAG = length($1) && match($1, /tag:/)
 		if (IS_GIT_TAG) {
-			UNRELEASED_COMMITS = 0
-			# Cut out text up to tag
-			sub(/.*tag: /, "", $1)
-			# Cut out text after tag
-			sub(/,.*/, "", $1)
-			print $1 
+			printTag($1)
 		} else {
-			if ( UNRELEASED_COMMITS ) {
-				print "Unreleased"
-				UNRELEASED_COMMITS = 0
-			}
-			if ( match($2, CHANGELOG_REGEX) ) {
-				sub(CHANGELOG_REGEX, "", $2)
-				printf("\t- %s\n", $2)
-			}
+			printCommit($2, $3, $4)
 		}
 
 	}
+}
+function printTag(input) {
+	# Cut out text up to tag
+	sub(/.*tag: /, "", input)
+	# Cut out text after tag
+	sub(/,.*/, "", input)
+	printf("## %s\n", input)
+}
+function printCommit(input, longHash, shortHash) {
+	if ( match(input, CHANGELOG_REGEX) ) {
+		sub(CHANGELOG_REGEX, "", input)
+		printf("- %s (%s)\n", input, makeCommitLink(REPO_URL, shortHash, longHash) )
+	}
+}
+function makeCommitLink(repoUrl, shortHash, longHash) {
+	return ("[" shortHash "](" repoUrl "/commit/" longHash ")")
+}
+# Get Git repo URL
+function getRepoURL() {
+	"git config --get remote.upstream.url || git config --get remote.origin.url || git config --get remote.dev.url" | getline REPO_URL
+	sub(/:/, "/", REPO_URL)
+	sub(/git@/, "https://", REPO_URL)
+	sub(/\.git/, "", REPO_URL)
+	return REPO_URL
 }
