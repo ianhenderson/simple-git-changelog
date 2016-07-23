@@ -1,6 +1,6 @@
 {
   "name": "simple-git-changelog",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "A simple AWK script to generate changelogs from your Git history.",
   "main": "index.js",
   "config": {
