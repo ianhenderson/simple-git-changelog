@@ -23,7 +23,7 @@ function printTag(input) {
 	sub(/.*tag: /, "", input)
 	# Cut out text after tag
 	sub(/,.*/, "", input)
-	printf("## %s\n", input)
+	printf("\n## %s\n", input)
 }
 function printCommit(input, longHash, shortHash) {
 	if ( match(input, CHANGELOG_REGEX) ) {
