@@ -1,8 +1,0 @@
-v1.3.0
-	- Add new prefixes: feature, refactor and update
-v1.2.0
-	- Update NPM scripts
-	- Update NPM scripts
-v1.1.0
-	- Add bin section to package.json for NPM
-	- Added AWK script
