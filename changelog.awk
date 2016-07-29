@@ -23,12 +23,18 @@ function printTag(input) {
 	sub(/.*tag: /, "", input)
 	# Cut out text after tag
 	sub(/,.*/, "", input)
-	printf("\n## %s\n", input)
+	if (TYPE == "plain")
+		printf("\n%s\n", input)
+	else
+		printf("\n## %s\n", input)
 }
 function printCommit(input, longHash, shortHash) {
 	if ( match(input, CHANGELOG_REGEX) ) {
 		sub(CHANGELOG_REGEX, "", input)
-		printf("- %s (%s)\n", input, makeCommitLink(REPO_URL, shortHash, longHash) )
+		if (TYPE == "plain")
+			printf("\t- %s\n", input, makeCommitLink(REPO_URL, shortHash, longHash) )
+		else
+			printf("- %s (%s)\n", input, makeCommitLink(REPO_URL, shortHash, longHash) )
 	}
 }
 function makeCommitLink(repoUrl, shortHash, longHash) {
