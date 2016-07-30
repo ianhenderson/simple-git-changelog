@@ -43,8 +43,11 @@ It will default to printing in Markdown ([example](CHANGELOG.md)), but will prin
 ```
 
 ## Notes
+
+#### Tags
 The script will order commits under their respective [Git tags](https://git-scm.com/docs/git-tag), assuming that they begin with "v" (ex. `v1`, `v43`, `v2.3.4`, etc.) All other tags will be ignored.
 
+#### Commit prefixes
 Only commits that are prefixed with one of the following prefixes will be output:
 - `changelog`
 - `fix`
@@ -59,6 +62,14 @@ For example:
 - `fix: Fixed bug #123`
 - `docs: Updated README`
 - `refactor: Moved foobar into baz module`
+
+#### Commit links (Markdown output only)
+In order to build the little links to each commit, the script will essentially run:
+```sh
+git config --get remote.upstream.url || git config --get remote.origin.url || git config --get remote.dev.url
+```
+So make sure that you have a remote labeled either `upstream`, `origin` or `dev`.
+
 
 ## Todo
 - Publish to `brew`, `apt-get`...?
