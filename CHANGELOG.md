@@ -1,4 +1,8 @@
 
+## v1.5.0
+- Update README.md ([2d2b832](https://github.com/ianhenderson/simple-git-changelog/commit/2d2b8327c6716d4f22b7cf81164999b55581d060))
+- Add plaintext option ([c772f02](https://github.com/ianhenderson/simple-git-changelog/commit/c772f020582a5849466446e88b782491450b8794))
+
 ## v1.4.1
 - Add newline to fix Github markdown parsing ([e2da41c](https://github.com/ianhenderson/simple-git-changelog/commit/e2da41c24de53195194b8e0da312b134835951e5))
 

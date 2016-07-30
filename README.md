@@ -36,7 +36,7 @@ Clone or download the script to your machine and simply call it from the command
 
 Call the script within a Git repository, and it will print a summary of changes to STDOUT in reverse-chronological order.
 
-It will default to printing in Markdown ([example](CHANGELOG.md)), but will print plain text if you pass an argument:
+It will default to printing in Markdown ([example](CHANGELOG.md)), but will print plain text as well ([example](CHANGELOG)) if you pass an argument:
 ```sh
 ./changelog.awk               # outputs Markdown
 ./changelog.awk -v TYPE=plain # outputs plain text
