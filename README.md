@@ -19,14 +19,6 @@ Install this package as a devDependency for your project and call it via NPM scr
 npm i -D simple-git-changelog
 ```
 
-```json
-/* In your package.json: */
-...
-"scripts": {
-    "changelog": "./changelog.awk > CHANGELOG.md"
-},
-...
-```
 
 #### Anything else
 
@@ -42,6 +34,20 @@ It will default to printing in Markdown ([example](CHANGELOG.md)), but will prin
 ./changelog.awk -v TYPE=plain # outputs plain text
 ```
 
+#### For NPM users
+There is also an executable added to your local `node_modules/.bin/` path for convenience:
+- `changelog` : Non-destructive command that simply prints to STDOUT based on your Git commit history. Same as simply calling `./changelog.awk`.
+
+So for example, you could add to your project's NPM scripts:
+
+```json
+/* In your package.json: */
+...
+"scripts": {
+    "changelog": "changelog > CHANGELOG.md"
+},
+...
+```
 ## Notes
 
 #### Tags

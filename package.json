@@ -7,7 +7,8 @@
     "changelog_file": "./CHANGELOG.md"
   },
   "bin": {
-    "changelog": "./changelog.awk"
+    "changelog": "./changelog.awk",
+    "changelog-postversion": "./npm-postversion.sh"
   },
   "scripts": {
     "changelog": "./changelog.awk > $npm_package_config_changelog_file",
