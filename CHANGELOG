@@ -1,4 +1,8 @@
 
+v1.6.0
+	- Add NPM postversion script
+	- Update Readme
+
 v1.5.0
 	- Update README.md
 	- Add plaintext option

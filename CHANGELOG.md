@@ -1,4 +1,8 @@
 
+## v1.6.0
+- Add NPM postversion script ([0596372](https://github.com/ianhenderson/simple-git-changelog/commit/0596372f4ff82fa5de12f981de9e0c68d3c2e082))
+- Update Readme ([8c47f43](https://github.com/ianhenderson/simple-git-changelog/commit/8c47f43d8f29e452c49cf8671a02b595cc551e59))
+
 ## v1.5.0
 - Update README.md ([2d2b832](https://github.com/ianhenderson/simple-git-changelog/commit/2d2b8327c6716d4f22b7cf81164999b55581d060))
 - Add plaintext option ([c772f02](https://github.com/ianhenderson/simple-git-changelog/commit/c772f020582a5849466446e88b782491450b8794))
