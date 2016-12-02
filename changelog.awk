@@ -44,7 +44,7 @@ function makeCommitLink(repoUrl, shortHash, longHash) {
 function getRepoURL() {
 	"git config --get remote.upstream.url || git config --get remote.origin.url || git config --get remote.dev.url" | getline REPO_URL
 	sub(/:/, "/", REPO_URL)
-	sub(/git@/, "https://", REPO_URL)
+	sub(/git@|https?:?\/+/, "https://", REPO_URL)
 	sub(/\.git/, "", REPO_URL)
 	return REPO_URL
 }
