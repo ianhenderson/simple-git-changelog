@@ -1,4 +1,7 @@
 
+## v1.7.0
+- Fix broken changelog links when repo has been cloned via https URL ([f630fe3](https://github.com/ianhenderson/simple-git-changelog/commit/f630fe3c228226b0f6e797dbd0d62db431b93dc1))
+
 ## v1.6.0
 - Add NPM postversion script ([0596372](https://github.com/ianhenderson/simple-git-changelog/commit/0596372f4ff82fa5de12f981de9e0c68d3c2e082))
 - Update Readme ([8c47f43](https://github.com/ianhenderson/simple-git-changelog/commit/8c47f43d8f29e452c49cf8671a02b595cc551e59))

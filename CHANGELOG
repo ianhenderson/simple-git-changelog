@@ -1,4 +1,7 @@
 
+v1.7.0
+	- Fix broken changelog links when repo has been cloned via https URL
+
 v1.6.0
 	- Add NPM postversion script
 	- Update Readme
