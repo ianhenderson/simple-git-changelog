@@ -6,7 +6,7 @@ A simple AWK script to generate changelogs from your Git history.
 
 There are many fancy tools for generating changelogs based on ones git commit history, but I wanted one that was dead-simple to use and not dependent on runtimes like Nodejs, Python, etc.
 
-Since AWK can be found on almost any Unix-based system, this script can be used regardless of whether your building a project in Java, Golang, Javascript, etc.
+Since AWK can be found on almost any Unix-based system, this script can be used regardless of whether you're building a project in Java, Golang, Javascript, etc.
 
 ## Installation
 
