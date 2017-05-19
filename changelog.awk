@@ -2,7 +2,7 @@
 BEGIN {
 	REPO_URL = getRepoURL()
 	# Prefixes that determine whether a commit will be printed
-	CHANGELOG_REGEX = "^(changelog|fix|docs|chore|feat|feature|refactor|update): "
+	CHANGELOG_REGEX = "^(changelog|fix|hotfix|docs|chore|feat|feature|refactor|update): "
 	FS="|"
 	# %D: tags
 	# %s: commit message
