@@ -92,17 +92,20 @@ BEGIN {
 	# Print remaining commits
 	# Anything here is pending release on next version
 
-	printUpdates()
-	printDocumentation()
-	printBugFixes()
-	printFeatures()
+	if (FEATURE_COUNT > 0 || BUG_FIX_COUNT > 0 || DOCS_COUNT > 0 || UPDATE_COUNT > 0) {
 
-	if (TYPE == "plain") {
-		storeOutput("Pending Release\n")
-	} else {
-		storeOutput("### Pending Release\n")
+		printUpdates()
+		printDocumentation()
+		printBugFixes()
+		printFeatures()
+
+		if (TYPE == "plain") {
+			storeOutput("Pending Release\n")
+		} else {
+			storeOutput("### Pending Release\n")
+		}
+
 	}
-
 
 	printOutput()
 }
