@@ -213,6 +213,8 @@ function printTag (input, date) {
 	if (parts[1] != MAJOR_VERSION){
 		format = "##"
 	}
+	
+	format = "###"
 
 	MAJOR_VERSION = parts[1]
 	MINOR_VERSION = parts[2]
