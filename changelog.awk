@@ -112,7 +112,7 @@ function printOutput () {
 	# Print stored output in reverse order
 
 	while (OUTPUT_COUNT) {
-		printf(OUTPUT[OUTPUT_COUNT--])
+		printf(OUTPUT[--OUTPUT_COUNT])
 	}
 }
 function printFeatures () {
