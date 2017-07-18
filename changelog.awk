@@ -110,7 +110,7 @@ BEGIN {
 	printOutput()
 }
 
-function printOutput () {
+function printOutput() {
 
 	# Print stored output in reverse order
 
@@ -118,7 +118,7 @@ function printOutput () {
 		printf(OUTPUT[--OUTPUT_COUNT])
 	}
 }
-function printFeatures () {
+function printFeatures() {
 	if (FEATURE_COUNT > 0){
 		while (FEATURE_COUNT){
 			storeOutput(FEATURES[--FEATURE_COUNT])
@@ -128,11 +128,8 @@ function printFeatures () {
 		FEATURE_COUNT = 0
 	}
 }
-function storeFeature (string) {
-	FEATURES[FEATURE_COUNT++] = string
-}
 
-function printBugFixes () {
+function printBugFixes() {
 	if (BUG_FIX_COUNT > 0){
 		while (BUG_FIX_COUNT){
 			storeOutput(BUG_FIXES[--BUG_FIX_COUNT])
@@ -142,11 +139,8 @@ function printBugFixes () {
 		BUG_FIX_COUNT = 0
 	}
 }
-function storeBugFix (string) {
-	BUG_FIXES[BUG_FIX_COUNT++] = string
-}
 
-function printDocumentation () {
+function printDocumentation() {
 	if (DOCS_COUNT > 0){
 		while (DOCS_COUNT){
 			storeOutput(DOCS[--DOCS_COUNT])
@@ -156,11 +150,8 @@ function printDocumentation () {
 		DOCS_COUNT = 0
 	}
 }
-function storeDocumentation (string) {
-	DOCS[DOCS_COUNT++] = string
-}
 
-function printUpdates () {
+function printUpdates() {
 	if (UPDATE_COUNT > 0){
 		while (UPDATE_COUNT){
 			storeOutput(UPDATES[--UPDATE_COUNT])
@@ -170,26 +161,23 @@ function printUpdates () {
 		UPDATE_COUNT = 0
 	}
 }
-function storeUpdate (string) {
-	UPDATES[UPDATE_COUNT++] = string
-}
 
-function classifyCommit (message, longHash, shortHash, date, name) {
+function classifyCommit(message, longHash, shortHash, date, name) {
 	if ( match(message, FEATURE_REGEX) ) {
-		storeFeature(getCommitLine(message, longHash, shortHash, date, name))
+		FEATURES[FEATURE_COUNT++] = getCommitLine(message, longHash, shortHash, date, name)
 	}
 	if ( match(message, BUG_FIX_REGEX) ) {
-		storeBugFix( getCommitLine(message, longHash, shortHash, date, name) )
+		BUG_FIXES[BUG_FIX_COUNT++] = getCommitLine(message, longHash, shortHash, date, name)
 	}
 	if ( match(message, DOCS_REGEX) ) {
-		storeDocumentation( getCommitLine(message, longHash, shortHash, date, name) )
+		DOCS[DOCS_COUNT++] = getCommitLine(message, longHash, shortHash, date, name)
 	}
 	if ( match(message, UPDATE_REGEX) ) {
-		UPDATES[UPDATE_COUNT] = getCommitLine(message, longHash, shortHash, date, name)
+		UPDATES[UPDATE_COUNT++] = getCommitLine(message, longHash, shortHash, date, name)
 	}
 }
 
-function getCommitLine (message, longHash, shortHash, date, name) {
+function getCommitLine(message, longHash, shortHash, date, name) {
 	sub(CHANGELOG_REGEX, "", message)
 	if (TYPE == "plain")
 		return sprintf("\t- %s\n", message, makeCommitLink(REPO_URL, shortHash, longHash) )
@@ -197,7 +185,7 @@ function getCommitLine (message, longHash, shortHash, date, name) {
 		return sprintf("- %s (%s) (%s)\n", message, makeCommitLink(REPO_URL, shortHash, longHash), name )
 }
 
-function printTag (input, date) {
+function printTag(input, date) {
 	# Cut out text up to tag
 	sub(/.*tag: v/, "", input)
 	# Cut out text after tag
@@ -213,7 +201,7 @@ function printTag (input, date) {
 	if (parts[1] != MAJOR_VERSION){
 		format = "##"
 	}
-	
+
 	format = "###"
 
 	MAJOR_VERSION = parts[1]
@@ -245,10 +233,10 @@ function getRepoURL() {
 	sub(/\.git/, "", REPO_URL)
 	return REPO_URL
 }
-function storeOutput (string) {
+function storeOutput(string) {
 	OUTPUT[OUTPUT_COUNT++] = string
 }
-function storeHeader (string) {
+function storeHeader(string) {
 	if (TYPE == "plain"){
 		sub(/\#+ /, "\t", string)
 	}
