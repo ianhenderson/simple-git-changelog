@@ -94,18 +94,18 @@ function getTag(input) {
 	# Cut out text after tag
 	sub(/,.*/, "", input)
 	if (TYPE == "plain")
-		return sprintf("\n%s\n", input)
+		return sprintf("\n%s", input)
 	else
-		return sprintf("\n## %s\n", input)
+		return sprintf("\n## %s", input)
 }
 
 function printCommit(input, longHash, shortHash) {
 	if ( match(input, CHANGELOG_REGEX) ) {
 		sub(CHANGELOG_REGEX, "", input)
 		if (TYPE == "plain")
-			return sprintf("\t- %s\n", input, makeCommitLink(REPO_URL, shortHash, longHash) )
+			return sprintf("\t- %s", input, makeCommitLink(REPO_URL, shortHash, longHash) )
 		else
-			return sprintf("- %s (%s)\n", input, makeCommitLink(REPO_URL, shortHash, longHash) )
+			return sprintf("- %s (%s)", input, makeCommitLink(REPO_URL, shortHash, longHash) )
 	}
 }
 
