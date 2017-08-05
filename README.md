@@ -30,8 +30,15 @@ Call the script within a Git repository, and it will print a summary of changes 
 
 It will default to printing in Markdown ([example](CHANGELOG.md)), but will print plain text as well ([example](CHANGELOG)) if you pass an argument:
 ```sh
-./changelog.awk               # outputs Markdown
-./changelog.awk -v TYPE=plain # outputs plain text
+./changelog.awk               		# outputs Markdown
+./changelog.awk -v TYPE=plain 		# outputs plain text
+
+./changelog.awk -v FROM=v1.1.0 		# only parses from git tag, "v1.1.0"
+./changelog.awk -v FROM=2d2cce8 	# only parses from git commit "2d2cce8"
+
+./changelog.awk -v MODE=old 		# outputs "classic" style, without categories
+
+./changelog.awk -v TYPE=plain -v MODE=old -v FROM=2d2cce8 	# use multiple options
 ```
 
 #### For NPM users

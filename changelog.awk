@@ -23,6 +23,10 @@ BEGIN {
 	DELIMITER = "---"
 
 	FS="|"
+	SINCE = ""
+	if ( length(FROM) ) {
+		SINCE = FROM "..HEAD"
+	}
 
 	# The output array is an n x 5 grid, where n is the number of versions and
 	# the five columns correspond to the:
@@ -45,7 +49,7 @@ BEGIN {
 	# %h: short hash
 	# %cd: commiter date
 	# %an: author name
-	while ("git log --date=short --pretty='%D|%s|%H|%h|%cd|%an'" | getline) {
+	while ("git log " SINCE " --date=short --pretty='%D|%s|%H|%h|%cd|%an'" | getline) {
 
 		IS_GIT_TAG = isGitTag($1)
 
