@@ -100,9 +100,9 @@ BEGIN {
 		printFeatures()
 
 		if (TYPE == "plain") {
-			storeOutput("Pending Release\n")
+			storeOutput("Current\n")
 		} else {
-			storeOutput("### Pending Release\n")
+			storeOutput("#### Current\n")
 		}
 
 	}
@@ -124,7 +124,7 @@ function printFeatures() {
 			storeOutput(FEATURES[--FEATURE_COUNT])
 		}
 
-		storeHeader(sprintf("##### New Features\n"))
+		storeHeader(sprintf("###### New Features\n"))
 		FEATURE_COUNT = 0
 	}
 }
@@ -135,7 +135,7 @@ function printBugFixes() {
 			storeOutput(BUG_FIXES[--BUG_FIX_COUNT])
 		}
 
-		storeHeader(sprintf("##### Bug Fixes\n"))
+		storeHeader(sprintf("###### Bug Fixes\n"))
 		BUG_FIX_COUNT = 0
 	}
 }
@@ -146,7 +146,7 @@ function printDocumentation() {
 			storeOutput(DOCS[--DOCS_COUNT])
 		}
 
-		storeHeader(sprintf("##### Documentation Changes\n"))
+		storeHeader(sprintf("###### Documentation Changes\n"))
 		DOCS_COUNT = 0
 	}
 }
@@ -157,7 +157,7 @@ function printUpdates() {
 			storeOutput(UPDATES[--UPDATE_COUNT])
 		}
 
-		storeHeader(sprintf("##### Updates\n"))
+		storeHeader(sprintf("###### Updates\n"))
 		UPDATE_COUNT = 0
 	}
 }
@@ -202,7 +202,7 @@ function printTag(input, date) {
 		format = "##"
 	}
 
-	format = "###"
+	format = "####"
 
 	MAJOR_VERSION = parts[1]
 	MINOR_VERSION = parts[2]
