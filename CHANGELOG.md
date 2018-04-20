@@ -1,4 +1,7 @@
 
+## v1.8.0
+- Adds hotfix commit prefix (#2) ([d02b024](https://github.com/ianhenderson/simple-git-changelog/commit/d02b0248510826bf0e923f60d33a873828ba6040))
+
 ## v1.7.0
 - Fix broken changelog links when repo has been cloned via https URL ([f630fe3](https://github.com/ianhenderson/simple-git-changelog/commit/f630fe3c228226b0f6e797dbd0d62db431b93dc1))
 

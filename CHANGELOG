@@ -1,4 +1,7 @@
 
+v1.8.0
+	- Adds hotfix commit prefix (#2)
+
 v1.7.0
 	- Fix broken changelog links when repo has been cloned via https URL
 
