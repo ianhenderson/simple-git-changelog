@@ -63,6 +63,7 @@ Only commits that are prefixed with one of the following prefixes will be output
 - `feature`
 - `refactor`
 - `update`
+- `hotfix`
 
 For example:
 - `fix: Fixed bug #123`

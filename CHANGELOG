@@ -1,31 +1,47 @@
 
-v1.8.0
+2.0.0 (2018-04-20)
+	New Features
+	- Group changes by type in changelog (#3)
+
+1.8.0 (2018-04-20)
+	New Features
 	- Adds hotfix commit prefix (#2)
 
-v1.7.0
+1.7.0 (2016-12-02)
+	Bug Fixes
 	- Fix broken changelog links when repo has been cloned via https URL
 
-v1.6.0
+1.6.0 (2016-09-12)
+	New Features
 	- Add NPM postversion script
+	Documentation Changes
 	- Update Readme
 
-v1.5.0
-	- Update README.md
+1.5.0 (2016-07-29)
+	New Features
 	- Add plaintext option
+	Documentation Changes
+	- Update README.md
 
-v1.4.1
+1.4.1 (2016-07-23)
+	Bug Fixes
 	- Add newline to fix Github markdown parsing
 
-v1.4.0
+1.4.0 (2016-07-23)
+	New Features
 	- Update to output in markdown format
 
-v1.3.0
+1.3.0 (2016-07-13)
+	New Features
 	- Add new prefixes: feature, refactor and update
 
-v1.2.0
+1.2.0 (2016-07-13)
+	Bug Fixes
 	- Update NPM scripts
+	Documentation Changes
 	- Update NPM scripts
 
-v1.1.0
-	- Add bin section to package.json for NPM
+1.1.0 (2016-07-13)
+	Documentation Changes
 	- Added AWK script
+	- Add bin section to package.json for NPM
