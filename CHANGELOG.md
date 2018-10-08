@@ -1,4 +1,8 @@
 
+## 2.1.0 (2018-10-08)
+### New Features
+- Accept optional git revision range (#4) ([d092f98](https://github.com/ianhenderson/simple-git-changelog/commit/d092f98eab8226d457fae4de1990185e9fdb3c2f)) (Dmitry M)
+
 ## 2.0.0 (2018-04-20)
 ### New Features
 - Group changes by type in changelog (#3) ([3e686eb](https://github.com/ianhenderson/simple-git-changelog/commit/3e686ebed79ce46279083063fa685746666ded92)) (Matthew Graser)
