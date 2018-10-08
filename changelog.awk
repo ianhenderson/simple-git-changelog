@@ -28,7 +28,7 @@ BEGIN {
 	# %h: short hash
 
 	i = 1
-	while ("git log --date=short --pretty='%D|%s|%H|%h|%cd|%an'" | getline) {
+	while ("git log --date=short --pretty='%D|%s|%H|%h|%cd|%an' " REVISION_RANGE | getline) {
 		LINES[i] = $0
 		i++
 	}
